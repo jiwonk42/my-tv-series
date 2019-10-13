@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SeriesList from '../../components/SeriesList/SeriesList';
-import { is } from '@babel/types';
+import Loader from '../../components/Loader/Loader';
 
 export class Series extends Component {
   state = {
@@ -36,7 +36,7 @@ export class Series extends Component {
           <p>No TV series have been found with this name</p>
         }
         {
-          isFetching && <p>Loading...</p>
+          isFetching && <Loader />
         }
         {
           !isFetching && <SeriesList list={this.state.series} />
