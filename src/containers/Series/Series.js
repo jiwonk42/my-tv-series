@@ -3,7 +3,9 @@ import SeriesList from '../../components/SeriesList/SeriesList';
 
 export class Series extends Component {
   state = {
-    series: []
+    series: [],
+    seriesName: '',
+    isFetching: false
   }
 
   onSeriesInputChange = (e) => {
@@ -13,9 +15,11 @@ export class Series extends Component {
   }
 
   render() {
+    const { series, seriesName, isFetching } = this.state;
+    
     return (
       <div>
-        The length of series array: 
+        The length of series array: {this.state.series.length}
         <div>
           <input type="text" onChange={this.onSeriesInputChange} />
         </div>
