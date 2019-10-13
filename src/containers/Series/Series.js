@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Intro from '../../components/Intro/Intro';
 import SeriesList from '../../components/SeriesList/SeriesList';
 import Loader from '../../components/Loader/Loader';
 
@@ -22,6 +23,7 @@ export class Series extends Component {
 
     return (
       <div>
+        <Intro message="Here you can find all of your loved series" />
         <div>
           <input type="text" onChange={this.onSeriesInputChange} />
         </div>
