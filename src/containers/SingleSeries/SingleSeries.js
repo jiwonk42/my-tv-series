@@ -4,7 +4,7 @@ export class SingleSeries extends Component {
   render() {
     return (
       <div>
-        <p>Single Series</p>
+        <p>Single Series - the show ID will be {this.props.match.params.id}</p>
       </div>
     )
   }
