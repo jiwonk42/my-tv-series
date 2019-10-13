@@ -26,12 +26,12 @@ export class Series extends Component {
           <input type="text" onChange={this.onSeriesInputChange} />
         </div>
         { 
-          series.length === 0 && seriesName === ''
+          !isFetching && series.length === 0 && seriesName === ''
           &&
           <p>Please enter series name into the input</p>
         }
         {
-          series.length === 0 && seriesName !== ''
+          !isFetching && series.length === 0 && seriesName !== ''
           &&
           <p>No TV series have been found with this name</p>
         }
