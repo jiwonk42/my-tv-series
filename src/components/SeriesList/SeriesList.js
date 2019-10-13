@@ -1,9 +1,14 @@
 import React from 'react';
+import './SeriesList.css';
 
 const SeriesList = (props) => {
   return (
     <div>
-    Series List component
+      <ul className="series-list">
+        {props.list.map((series) => (
+          <li key={series.show.id}>{series.show.name}</li>
+        ))}
+      </ul>
     </div>
   )
 };
