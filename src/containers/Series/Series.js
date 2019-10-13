@@ -4,10 +4,10 @@ import SeriesList from '../../components/SeriesList/SeriesList';
 export class Series extends Component {
   state = {
     series: []
-  };
-  
-  componentDidMount() {
-    fetch('http://api.tvmaze.com/search/shows?q=Vikings')
+  }
+
+  onSeriesInputChange = (e) => {
+    fetch(`http://api.tvmaze.com/search/shows?q=${e.target.value}`)
     .then((response) => response.json())
     .then(json => this.setState({ series: json }))
   }
@@ -15,7 +15,10 @@ export class Series extends Component {
   render() {
     return (
       <div>
-        The length of series array: {this.state.series.length}
+        The length of series array: 
+        <div>
+          <input type="text" onChange={this.onSeriesInputChange} />
+        </div>
         <SeriesList list={this.state.series} />
       </div>
     )
